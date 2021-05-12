@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="toolbar">
+        <div class="filter-container">
+            <div class="filter-colors__container">
+                <div class="lightpink filter-color"></div>
+            </div>
+            <div class="filter-colors__container">
+                <div class="lightblue filter-color">
+                </div>
+            </div>
+            <div class="filter-colors__container">
+                <div class="lightgreen filter-color"></div>
+            </div>
+            <div class="filter-colors__container">
+                <div class="black filter-color"></div>
+            </div>
+        </div>
+        <div class="action-container">
+            <div class="add action-container__icons">
+                <i class="fas fa-plus"></i>
+            </div>
+            <div class="remove action-container__icons">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+
+        <div class="action-container">
+            <div class="lock action-container__icons">
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="unlock action-container__icons">
+                <i class="fas fa-unlock"></i>
+            </div>
+
+        </div>
+
+        <!-- <div class="action-container">
+            Today's Quote
+        </div> -->
+
+        <!-- fa-unlock-alt -->
+        <!-- fa-lock -->
+        <!-- <i class="fa fa-lock lockk" aria-hidden="true"></i> -->
+        <!-- <i class="fa fa-unlock-alt lock" aria-hidden="true"></i> -->
+
+        <div class="icon">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+        </div>
+
+    </div>
+    <div class="main-container">
+        <div class="modal_container">
+            <div class="modal_task_container">
+                <textarea name="" id="" cols="30" rows="10" class="desc-box" style="resize: none;"></textarea></div>
+             
+            <div class="modal_filter-container">
+                <div class="modal_filters lightpink"></div>
+                <div class="modal_filters lightblue"></div>
+                <div class="modal_filters lightgreen"></div>
+                <div class="modal_filters black border"></div>
+                <!-- <div class="mainDate"><label >Due Date: <input type="date" class="duedate" name="trip-start"
+                    value="2018-07-22"
+                    min="2019-01-01" max="2050-12-31"></label>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="small-container one">
+            <div class="small-tool lightpink">
+                <div class="small-text">
+                    <p contenteditable="true lightpink">Today</p>
+                </div>
+                <!-- <div class="small-tool-add">
+                    <i class="fas fa-plus"></i>
+                </div> -->
+                
+            </div>
+            
+        </div>
+        <div class="small-container two">
+            <div class="small-tool lightblue">
+                <div class="small-text">
+                    <p contenteditable="true">Tomorrow</p>
+                </div>
+                <!-- <div class="small-tool-add">
+                    <i class="fas fa-plus"></i>
+                </div> -->
+                
+            </div>
+        </div>
+        <div class="small-container three">
+            <div class="small-tool lightgreen">
+                <div class="small-text">
+                    <p contenteditable="true">This Week</p>
+                </div>
+                <!-- <div class="small-tool-add">
+                    <i class="fas fa-plus"></i>
+                </div> -->
+                
+            </div>
+        </div>
+        <div class="small-container four">
+            <div class="small-tool black">
+                <div class="small-text">
+                    <p contenteditable="true">This Month</p>
+                </div>
+                <!-- <div class="small-tool-add">
+                    <i class="fas fa-plus"></i>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="help-container">
+            <ul>
+                <li>This is ToDo App by Aryan Grover(@aryang23)</li>
+                <br>
+                <li>Here, You can add tasks in the list according to your schedule.</li>
+                <br>
+                <li>You can even delete the tasks, and even change the priorities.</li>
+                <br>
+                <li>You can even lock and unlock the tasks, and after locking you will not be able to edit it.</li>
+                <br>
+                <li>Color Scheme: -
+                    <ul>
+                        <li>LightPink: - Today Tasks</li>
+                        <li>LightBlue: - Tomorrow Tasks</li>
+                        <li>LightGreen: - This Week Task</li>
+                        <li>Black: - This Month Tasks</li>
+                    </ul>
+                </li>
+                <li>You can also follow me at: -
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/aryan-grover/">LinkedIn</a></li>
+                        <li><a href="https://github.com/aryang23">Github</a></li>
+                    </ul>
+                </li>
+                <br>
+            </ul>
+        </div>
+
+        <div class="quote-container">
+            <p>If You can GiveUp, Then You can't Code
+                <br>
+                If You Code, Then You will never GiveUp.</p>
+            
+        </div>
+        
+        
+
+        
+
+        
+        <!-- <div class="small-container black"></div> -->
+
+        <!-- <div class="allTasks"> -->
+            <!-- <div class="task">
+            <div class="bgcolor">BGC</div>
+            <div class="id">ID</div>
+            <div class="text">Text</div>
+        </div> -->
+        <!-- </div> -->
+
+
+
+
+
+    </div>
+    <!-- Import -->
+    <script src="https://cdn.jsdelivr.net/npm/short-unique-id@latest/dist/short-unique-id.min.js"></script>
+
+    <!-- Usage -->
+    <script>
+        // Instantiate
+        var uid = new ShortUniqueId();
+    </script>
+    <script defer src="script.js"></script>
+    <!-- <script defer src="filter.js"></script> -->
+</body>
+
+</html>
+
+<!-- Nasir Husen, Gaurav Sen,  -->
