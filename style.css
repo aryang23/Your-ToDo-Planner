@@ -5,7 +5,16 @@
 body{
     margin: 0px;
     word-break: break-all;
+    /* position: relative; */
 }
+/* body::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  /* body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    /* scrollbar-width: none;  /* Firefox */
+  /* }  */
 /* Generic */
 .lightpink{
     background-color: lightpink;
@@ -21,7 +30,8 @@ body{
 }
 /* Toolbar */
 .toolbar{
-    position: sticky;
+    /* position: absolute; */
+    /* position: fixed; */
     height: 12vh;
     background-color: #444;
     display: flex;
@@ -76,11 +86,19 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
-.fas{
+.fas,.fab{
     font-size:xx-large;
 }
 .fa{
     font-size: xx-large;
+}
+
+.fab.fa-github{
+    /* color: #495057; */
+    color: #212529;
+}
+.fas.fa-lock.help-cont,.fas.fa-unlock.help-cont{
+    font-size: large;
 }
 .action-container__icons:hover{
     background-color: #606060;
@@ -104,6 +122,7 @@ body{
 
     /* padding: 2rem; */
 }
+
 .modal_container{
     position: absolute;
     height: 18rem;
@@ -111,6 +130,7 @@ body{
     top: 25vh;
     width: 30rem;
     display: none;
+    word-break: break-word;
     /* background-color: #444; */
     /* top:40vh;
     left: 40vh; */
@@ -143,6 +163,21 @@ body{
 .modal_filters{
     width: 60%;
     height: 12%;
+    border-radius: 15%;
+}
+.modal_box{
+    background-color: #E9F2F1;
+    font-weight: bold;
+    font-size: larger;
+    /* color: white; */
+}
+#circle {
+    width: 50px;
+    height:50px;
+    /* background: red; */
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 0.8rem;
 }
 .allTasks{
     display: flex;
@@ -195,12 +230,22 @@ body{
     background-color: #FFFFFF;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.8);
     word-break: break-word;
+    overflow: auto;
 
 
     /* width: 20%; */
     /* margin-left: 5%; */
     
 }
+.ticker-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge add Firefox */
+  .ticker-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+  }
 .ticket-color{
     height: 8%;
     /* background-color: black; */
@@ -307,17 +352,57 @@ body{
 }
 
 
-.mainDate{
-    width: 100%;
+.list1{
+    display: flex;
+}
+.colorScheme{
+    width: 2rem;
+    height: 1rem;
+    border-radius: 4px;
 }
 
+
+@media only screen and (max-width: 1100px)
+{
+    .ticker-container {
+        width: 13.5rem;
+    }
+}
+
+ @media only screen and (max-width: 1000px){
+    .ticker-container{
+        width: 11.5rem;
+    }
+} 
+
+@media only screen and (max-width: 1000px){
+    .toolbar{
+        gap: 2rem;
+    }
+    .fas,.fa{
+        font-size: x-large;
+    }
+} 
+
+@media only screen and (max-width: 800px){
+    .main-container{
+        flex-direction: column;
+    }
+    .icon{
+        display: none;
+        margin-left: 20rem;
+    }
+    .toolbar{
+        gap: 1rem;
+    }
+}
 
 @media only screen and (max-width: 500px) {
     .main-container{
         flex-direction: column;
     }
     .toolbar{
-        gap: 3rem;
+        gap: 1rem;
     }
     .filter-container{
         height: 70%;
@@ -331,31 +416,15 @@ body{
         position: absolute;
         top: 25vh;
         height: 15rem;
-        width: 20rem;
-        left: calc((100vw - 20rem)/2);
+        width: 18rem;
+        left: calc((100vw - 18rem)/2);
     }
     .icon{
         display: none;
         /* margin-left: 5rem; */
     }
+    .fas,.fa{
+        font-size: large;
+    }
 
 }
-
-@media only screen and (max-width: 800px){
-    .main-container{
-        flex-direction: column;
-    }
-    .icon{
-        /* display: none; */
-        margin-left: 20rem;
-    }
-    .toolbar{
-        gap: 1rem;
-    }
-}
-
- @media only screen and (max-width: 1000px){
-    .ticker-container{
-        width: 11.5rem;
-    }
-} 

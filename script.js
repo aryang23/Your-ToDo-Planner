@@ -24,6 +24,7 @@ let helpBtn=document.querySelector(".icon");
 let helpState=false;
 let helpContainer=document.querySelector(".help-container");
 let dueDate=document.querySelector(".duedate");
+let addingTasksBtn=document.querySelector(".modal_box");
 
 let smallContainer1=document.querySelector(".small-container.one");
 let smallContainer2=document.querySelector(".small-container.two");
@@ -75,7 +76,7 @@ if(localStorage.getItem("allTasks"))
         }
         let colorStripElement=ticketContainer.querySelector(".ticket-color");
         handleColorContainer(colorStripElement,ticketsArr[i])
-        handleDeleteContainer(ticketContainer,ticketsArr);
+        handleDeleteContainer(ticketContainer,ticketsArr[i]);
         handleLockContainer(ticketContainer);
         handleUnlockContainer(ticketContainer);
         handleTextEdit(ticketContainer,id);
@@ -245,6 +246,16 @@ descBox.addEventListener("keydown", function (e) {
     }
 })
 
+addingTasksBtn.addEventListener("click",function(e){
+    let task = descBox.value;
+    createTicket(task,cColor);
+    modalContainer.style.display = "none";
+    flag = false;
+    descBox.value = "";
+
+})
+
+
 // let flag2=false;
 // smallAdd.addEventListener("click",function(){
 //     if(flag2==false)
@@ -302,7 +313,6 @@ function createTicket(task,cColor){
     let strArr=JSON.stringify(ticketsArr);
     localStorage.setItem("allTasks",strArr);
 
-
     if(cColor=='lightpink')
     {
         smallContainer1.appendChild(ticketContainer);
@@ -323,6 +333,7 @@ function createTicket(task,cColor){
     // mainContainer.appendChild(ticketContainer);
     let colorStripElement=ticketContainer.querySelector(".ticket-color");
     handleColorContainer(colorStripElement,singleArr);
+    singleArr=[id,task,cColor];
     handleDeleteContainer(ticketContainer,singleArr);
     handleLockContainer(ticketContainer);
     handleUnlockContainer(ticketContainer);
@@ -335,11 +346,67 @@ function createTicket(task,cColor){
     // })
 }
 
+function handleDeleteContainer(ticketContainer,singleArr)
+{
+    // console.log(ticketsArr);
+    ticketContainer.addEventListener("click",function(){
+        if(deleteState==true)
+        {
+            // console.log("SingleArr111",singleArr);
+            // console.log(ticketsArr);
+            let arr=singleArr;
+            // console.log("Single Arr",singleArr);
+            let id=arr[0];
+            // console.log("ID1",id);
+            let idToBeDeleted;
+            for(let i=0;i<ticketsArr.length;i++)
+            {
+                let ticket=ticketsArr[i];
+                if(ticket[0]==id)
+                {
+                    idToBeDeleted=i;
+                    break;
+                }
+            }
+            // console.log("IDDDDDDD",idToBeDeleted);
+            // let idx=ticketsArr.indexOf(arr);
+            let idx=idToBeDeleted;
+            // console.log("IDXX",idx);
+            ticketsArr.splice(idx,1);
+            // console.log(ticketsArr);
+            let strArr=JSON.stringify(ticketsArr);
+            localStorage.setItem("allTasks",strArr);
+            //ui
+            ticketContainer.remove();
+
+
+
+
+
+
+            // let elem=ticketContainer.querySelector(".ticket-id");
+            // let toBeDeletedId=elem.innerText.slice(1);
+            // // console.log(toBeDeletedId);
+            // let idx=ticketsArr.findIndex(function(ticket){
+            //     console.log(ticket.id,",,,,,,,,,,",toBeDeletedId);
+            //     return ticket.id==toBeDeletedId;
+            // })
+            
+            // console.log("IDX",idx);
+        //     ticketsArr.splice(idx,1);
+        //     localStorage.setItem("allTasks", JSON.stringify(ticketsArr));
+        // //    UI remove
+        //     ticketContainer.remove();
+        
+        }
+    })
+}
+
 function handleTextEdit(ticketContainer,mainId)
 {
     console.log("Hello");
     let taskDesc=ticketContainer.querySelector(".task-desc");
-    console.log(taskDesc);
+    // console.log(taskDesc);
     // taskDesc.addEventListener("keydown",function(e)
     ticketContainer.addEventListener("click",function(){
 
@@ -478,22 +545,7 @@ function finalColorChange(color,singleArr)
     localStorage.setItem("allTasks",strArr);
 }
 
-function handleDeleteContainer(ticketContainer,singleArr)
-{
-    ticketContainer.addEventListener("click",function(){
-        if(deleteState==true)
-        {
-            let arr=singleArr;
-            let idx=ticketsArr.indexOf(arr);
-            ticketsArr.splice(idx,1);
-            let strArr=JSON.stringify(ticketsArr);
-            localStorage.setItem("allTasks",strArr);
-            //ui
-            ticketContainer.remove();
-        
-        }
-    })
-}
+
 
 // function deleteTicket(ticketContainer)
 // {

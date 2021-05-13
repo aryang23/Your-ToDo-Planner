@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Your ToDo Planner</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -73,13 +73,14 @@
     <div class="main-container">
         <div class="modal_container">
             <div class="modal_task_container">
-                <textarea name="" id="" cols="30" rows="10" class="desc-box" style="resize: none;"></textarea></div>
+                <textarea name="" id="" cols="30" rows="10" class="desc-box" style="resize: none;" placeholder="Please enter the Task"></textarea></div>
              
             <div class="modal_filter-container">
                 <div class="modal_filters lightpink"></div>
                 <div class="modal_filters lightblue"></div>
                 <div class="modal_filters lightgreen"></div>
                 <div class="modal_filters black border"></div>
+                <div class="modal_box" id="circle" unselectable="on">Add</div>
                 <!-- <div class="mainDate"><label >Due Date: <input type="date" class="duedate" name="trip-start"
                     value="2018-07-22"
                     min="2019-01-01" max="2050-12-31"></label>
@@ -134,27 +135,69 @@
 
         <div class="help-container">
             <ul>
-                <li>This is ToDo App by Aryan Grover(@aryang23)</li>
-                <br>
-                <li>Here, You can add tasks in the list according to your schedule.</li>
+                <li>This is ToDo App by Aryan Grover<a href="https://github.com/aryang23">(@aryang23)</a></li>
+                
+                <!-- <li>For Adding: -
+                    <ul>
+                        <li>1. Click on the Add(+) Button to add the Task.</li>
+                        <li>2. Choose the Color scheme according to your Priority.</li>
+                        <li>3. After clicking on Add Button, Your task will be added.</li>
+                    </ul>
+                </li>
+                <li>For Removing: -
+                    <ul>
+                        <li>1. Click on the Cross(*) button.</li>
+                        <li>2. Then directly click on the task that you want to delete.(You can delete multiple tasks at a time)</li>
+                        <li>3. Don't forget to unclick the Remove Button by clicking that again.</li>
+                    </ul>
+                </li>
+                <li>Locking and Unlocking: -
+                    <ul>
+                        <li>Locked means You cannot edit the task.</li>
+                        <li>1. By default, each and every container is unlocked(You can directly edit that).</li>
+                        <li>2. For Locking, Just click on the Lock Button and Then click on tickets that you want to lock.</li>
+                        <li>3. Simillarly For unlocking, Just click on the Unlock Button and then click on tickets that you want to edit.</li>
+                    </ul>
+                </li> -->
+
                 <br>
                 <li>You can even delete the tasks, and even change the priorities.</li>
                 <br>
-                <li>You can even lock and unlock the tasks, and after locking you will not be able to edit it.</li>
+                <li>Lock Unlock: -
+                    <ul>
+                        <li><i class="fas fa-lock help-cont"></i>: - The tasks are not editable.</li>
+                        <li><i class="fas fa-unlock help-cont"></i>: - The tasks are editable.(By default, all tasks are unlocked).</li>
+                    </ul>
+                </li>
                 <br>
                 <li>Color Scheme: -
                     <ul>
-                        <li>LightPink: - Today Tasks</li>
-                        <li>LightBlue: - Tomorrow Tasks</li>
-                        <li>LightGreen: - This Week Task</li>
-                        <li>Black: - This Month Tasks</li>
+                        <li class="list1">
+                            <div class="lightpink colorScheme"></div>
+                            <div>: - Today's Tasks</div>
+                        </li>
+                        <li class="list1">
+                            <div class="lightblue colorScheme"></div>
+                            <div>: - Tomorrow's Tasks</div>
+                        </li>
+                        <li class="list1">
+                            <div class="lightgreen colorScheme"></div>
+                            <div>: - This Week Tasks</div>
+                        </li>
+                        <li class="list1">
+                            <div class="black colorScheme"></div>
+                            <div>: - This Month Tasks</div>
+                        </li>
                     </ul>
                 </li>
                 <li>You can also follow me at: -
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/aryan-grover/">LinkedIn</a></li>
-                        <li><a href="https://github.com/aryang23">Github</a></li>
-                    </ul>
+                    <br>
+                    <a href="https://www.linkedin.com/in/aryan-grover/">
+                        <i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/aryang23">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    
                 </li>
                 <br>
             </ul>
